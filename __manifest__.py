@@ -23,6 +23,7 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'views/website_moduljs.xml',
     ],
     'demo': [
         'demo/demo.xml',
