@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+
+        <template id="moduljs" name="Template Moduljs">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <div class="container oe_structure">
+                        <p>dika_base</p>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>
