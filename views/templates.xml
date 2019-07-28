@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+
+        <template id="assets_frontend_dika_base" name="Modul Javascript Frontend" inherit_id="web.assets_frontend">
+            <xpath expr="." position="inside">
+                <script src="moduljs/static/src/js/dika_base.js"></script>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>
