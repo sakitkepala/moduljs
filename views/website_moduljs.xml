@@ -5,7 +5,8 @@
             <t t-call="website.layout">
                 <div id="wrap">
                     <div class="container oe_structure">
-                        <p>dika_base</p>
+                        <div><p>dika_base</p></div>
+                        <div class="moduljs_base_widget">. . . placeholder</div>
                     </div>
                 </div>
             </t>
