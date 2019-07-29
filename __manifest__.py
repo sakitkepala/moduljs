@@ -21,12 +21,12 @@
     ],
     'data': [
         # 'security/ir.model.access.csv',
+        # view untuk backend, berupa record di tabel ir.ui.view
         'views/views.xml',
         'views/templates.xml',
         'views/website_moduljs.xml',
-        # 'static/src/xml/moduljs.button_klik_bang.xml',
     ],
-    'qweb': [
+    'qweb': [ # untuk template widget di frontend atau di web client
         'static/src/xml/moduljs.moduljs.xml',
     ],
     'demo': [

@@ -20,32 +20,27 @@ odoo.define('moduljs.moduljs', function (require) {
     // =>
     sAnimations.registry.moduljsButton = sAnimations.Class.extend({
         selector: '.moduljs_base_widget .btn',
-        // template: '<button class="btn">Klik aku, bang</button>',
 
         // -----------------------------------------------------------
-        // template: 'moduljs.button_klik_bang',
+        // template: 'moduljs.button_klik_bang', // <= berupa string nama/id templatenya
         // Ada error di sini ketika di appendTo() kalau pakai nilai template kayak di atas.
         // Error: QWeb2: Template 'moduljs.button_klik_bang' not found
         // -----------------------------------------------------------
 
-        // ----------------------------------------------------------------------
-        // ini untuk ambil depensi template kalau mau append widget lain dari sini:
+        // -----------------------------------------------------------------
+        // ini kalau punya template harus dicantumkan sebagai dependensi:
         // xmlDependencies: ['/moduljs/static/src/xml/moduljs.moduljs.xml'],
-        // ----------------------------------------------------------------------
+        // -----------------------------------------------------------------
 
         read_events: {
             // SUKSES: untuk menarget root DOM-nya, gak perlu cantumkan selektornya,
             //         langsung tentukan nama eventnya aja
             'click': 'onClickButtonBang',
         },
+        // init: function () {},
+        // willStart: function () {},
         start: function () {
-            // objek widget button
-            // console.log(this);
-            
-            // ----------------------------------------
-            // SUKSES: widget start
-            console.log("Widget moduljsButton start!");
-            // ----------------------------------------
+            var def = this._super.apply(this, arguments);
 
             // -------------------------------------------------------------------------------
             // this.$el.text("");
@@ -61,9 +56,21 @@ odoo.define('moduljs.moduljs', function (require) {
             //       - sudah ada cara bawaan pakai properti selector,
             //         tapi cari tau dulu caranya
             // -------------------------------------------------------------------------------
+            
+            // ----------------------------------------
+            // SUKSES: widget start
+            console.log("Widget moduljsButton start!");
+            // ----------------------------------------
+            
+            // objek widget button
+            // console.log(this);
+
+            return def;
         },
+        // destroy: function () {},
         onClickButtonBang: function () {
-            // console.log
+            // console.log("Makasih kliknya, bang!");
+            // atau
             window.alert("Makasih kliknya, bang!");
         },
     });
