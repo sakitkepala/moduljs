@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="moduljs.button_klik_bang">
+        <button class="btn">Klik aku, bang</button>
+    </t>
+</templates>

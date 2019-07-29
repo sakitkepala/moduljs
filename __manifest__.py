@@ -24,6 +24,10 @@
         'views/views.xml',
         'views/templates.xml',
         'views/website_moduljs.xml',
+        # 'static/src/xml/moduljs.button_klik_bang.xml',
+    ],
+    'qweb': [
+        'static/src/xml/moduljs.button_klik_bang.xml',
     ],
     'demo': [
         'demo/demo.xml',
