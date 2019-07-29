@@ -27,7 +27,7 @@
         # 'static/src/xml/moduljs.button_klik_bang.xml',
     ],
     'qweb': [
-        'static/src/xml/moduljs.button_klik_bang.xml',
+        'static/src/xml/moduljs.moduljs.xml',
     ],
     'demo': [
         'demo/demo.xml',

@@ -8,11 +8,16 @@ odoo.define('moduljs.moduljs', function (require) {
     console.log("Halo dari moduljs!");
     // ----------------------------------------
 
+    // MODEL: bagian ini sementara belum pakai, masih pakai data dummy
+    //        nanti ditambahkan
+    // {...}
+    // VIEW part: Odoo javascript MVC
     var core = require('web.core');
-
-    var qweb = core.qweb;
+    // CONTROLLER: extended Widget untuk website sale
     var sAnimations = require('website.content.snippets.animation');
 
+    var qweb = core.qweb;
+    // =>
     sAnimations.registry.moduljsButton = sAnimations.Class.extend({
         selector: '.moduljs_base_widget',
         // template: '<button class="btn">Klik aku, bang</button>',
@@ -35,20 +40,25 @@ odoo.define('moduljs.moduljs', function (require) {
             // ----------------------------------------
             // SUKSES: widget start
             console.log("Widget moduljsButton start!");
+            console.log(this);
             // ----------------------------------------
 
             // -------------------------------------------------------------------------------
-            this.$el.text("");
+            // this.$el.text("");
             // SUKSES: template moduljs.button_klik_bang dari moduljs.button_klik_bang.xml
             //         berhasil di append ke DOM berclass .moduljs_base_widget
-            $(qweb.render('moduljs.button_klik_bang'))
-                .appendTo('.moduljs_base_widget');
+            // $(qweb.render('moduljs.button_klik_bang'))
+            //     .appendTo('.moduljs_base_widget');
 
-            if ($('.moduljs_base_widget .btn').length) {
-                console.log("template \"moduljs.button_klik_bang\" berhasil di-appendTo()");
-            }
+            // if ($('.moduljs_base_widget .btn').length) {
+            //     console.log("template \"moduljs.button_klik_bang\" berhasil di-appendTo()");
+            // } else {
+            //     console.log("Template belum nempel!");
+            // }
             // NOTE: - cara ini sebaiknya untuk append widget secara dinamis berdasarkan event user
-            //       - cocoknya untuk menampilkan modal box nego misalnya: user klik tombol, modal muncul
+            //       - cocok buat menampilkan modal box nego misalnya: user klik tombol, modal muncul
+            //         misal: var newWidget = new NewWidget();
+            //                newWidget.appendTo('.target .class');
             //       - sudah ada cara bawaan pakai properti selector,
             //         tapi cari tau dulu caranya
             // -------------------------------------------------------------------------------
@@ -57,4 +67,22 @@ odoo.define('moduljs.moduljs', function (require) {
             console.log("Makasih kliknya, bang!");
         },
     });
+
+    // Append widget dari sini: <<<
+    // GAGAL: "module could not be started"
+    // var buttonKlikBang = new moduljsButton(this);
+    // var $target = $('.moduljs_base_widget');
+    // buttonKlikBang.appendTo($target);
+
+    // tes widget
+    if ($('.moduljs_base_widget .btn').length) {
+        console.log("template \"moduljs.button_klik_bang\" berhasil di-appendTo()");
+    } else {
+        console.log("Template belum nempel!");
+    }
+
+    console.log(sAnimations.registry);
+    console.log(sAnimations.Class);
+
+    // Definisi modul selesai
 });

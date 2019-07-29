@@ -6,7 +6,10 @@
                 <div id="wrap">
                     <div class="container oe_structure">
                         <div><p>dika_base</p></div>
-                        <div class="moduljs_base_widget">. . . placeholder</div>
+                        
+                        <div class="moduljs_base_widget">
+                            <button class="btn">Klik aku, bang</button>
+                        </div>
                     </div>
                 </div>
             </t>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- <templates>
+            <t t-name="moduljs.button_klik_bang">
+                <button class="btn">Klik aku, bang</button>
+            </t>
+        </templates> -->
+        
+    </data>
+</odoo>
