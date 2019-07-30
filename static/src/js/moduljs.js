@@ -13,13 +13,15 @@ odoo.define('moduljs.moduljs', function (require) {
     // {...}
     // VIEW part: Odoo javascript MVC
     var core = require('web.core');
+    var Dialog = require('web.Dialog');
     // CONTROLLER: extended Widget untuk website sale
+    var Widget = require('web.Widget');
     var sAnimations = require('website.content.snippets.animation');
 
     var qweb = core.qweb;
     // =>
-    sAnimations.registry.moduljsButton = sAnimations.Class.extend({
-        selector: '.moduljs_base_widget .btn',
+    sAnimations.registry.ModuljsButton = sAnimations.Class.extend({
+        selector: '.moduljs_base_widget',
 
         // -----------------------------------------------------------
         // template: 'moduljs.button_klik_bang', // <= berupa string nama/id templatenya
@@ -35,7 +37,8 @@ odoo.define('moduljs.moduljs', function (require) {
         read_events: {
             // SUKSES: untuk menarget root DOM-nya, gak perlu cantumkan selektornya,
             //         langsung tentukan nama eventnya aja
-            'click': 'onClickButtonBang',
+            'click .btn.klikbang': 'onClickButtonBang',
+            'click .btn.dialog': 'onClickButtonDialog',
         },
         // init: function () {},
         // willStart: function () {},
@@ -68,10 +71,26 @@ odoo.define('moduljs.moduljs', function (require) {
             return def;
         },
         // destroy: function () {},
-        onClickButtonBang: function () {
-            // console.log("Makasih kliknya, bang!");
+        onClickButtonBang: function (evt) {
+            console.log(evt.target);
+            console.log("Makasih kliknya, bang!");
             // atau
-            window.alert("Makasih kliknya, bang!");
+            // window.alert("Makasih kliknya, bang!");
+        },
+        onClickButtonDialog: function (evt) {
+            console.log(evt.target);
+            console.log("Dialog tertrigger");
+
+            new ModuljsDialog(this, {
+                title: "Dialog di moduljs",
+                // $content: qweb.render('moduljs.form_dialog'),
+                buttons: [{
+                    text: 'Tutup',
+                    click: function () {
+                        this._onTutup();
+                    },
+                }],
+            }).open();
         },
     });
 
@@ -92,4 +111,21 @@ odoo.define('moduljs.moduljs', function (require) {
     // console.log(sAnimations.Class);
 
     // Definisi modul selesai
+
+    var ModuljsDialog = Dialog.extend({
+        events: {
+            'click .btn-primary': '_onTutup',
+        },
+        init: function () {
+            var def = this._super.apply(this, arguments);
+
+            console.log("ModuljsDialog init!");
+
+            return def;
+        },
+        _onTutup: function (ev) {
+            this.close(); // ini fungsi jQuery?
+        },
+    });
+
 });

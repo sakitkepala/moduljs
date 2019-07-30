@@ -8,7 +8,9 @@
                         <div><p>dika_base</p></div>
                         
                         <div class="moduljs_base_widget">
-                            <button class="btn">Klik aku, bang</button>
+                            <button class="btn klikbang">Klik aku, bang</button>
+                            <hr />
+                            <button class="btn dialog btn-primary">Tombol dialog</button>
                         </div>
                     </div>
                 </div>

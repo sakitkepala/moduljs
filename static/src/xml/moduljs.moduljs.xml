@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
-    <data>
+<!-- <odoo>
+    <data> -->
 
         <!-- <templates>
             <t t-name="moduljs.button_klik_bang">
                 <button class="btn">Klik aku, bang</button>
             </t>
         </templates> -->
+
+        <templates>
+            <t t-name="moduljs.form_dialog">
+                <div>
+                    <form>
+                        <p class="harga-awal"></p>
+                        <div class="form-group">
+                            <label for="harga-tawar" class="col-form-label">Tawar harga</label>
+                            <input type="number" class="form-control input-harga-nego" id="harga-tawar" required="" />
+                        </div>
+                        <div class="form-group">
+                            <label for="teks-keterangan" class="col-form-label">Pesan untuk penjual</label>
+                            <textarea class="form-control" id="teks-keterangan"></textarea>
+                        </div>
+                    </form>
+                </div>
+            </t>
+        </templates>
         
-    </data>
-</odoo>
+    <!-- </data>
+</odoo> -->
